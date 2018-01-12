@@ -1,4 +1,3 @@
-var i = 0;
 
 $(document).ready(function(){
   $(document).on("keydown",function(e){
@@ -8,26 +7,43 @@ $(document).ready(function(){
   });
   $("#start-btn").click(function(){
     $("#start-btn").hide();
-    $("#bubble").fadeIn();
-    i++;
-    $("#about").addClass("marker" + i);
+    $("#bubble").show();
+    $("#about-box").fadeIn();
   });
   $("#about-btn").click(function(){
     if( $("#bubble").css('display') == 'none') {
       $("#bubble").fadeIn();
+      $("#start-btn").hide();
     }
-    $("#start-btn").hide();
-    $("#about").fadeIn();
-    if (i > 0){
-      $("marker" + i).fadeOut();
+    $("#about-box").fadeIn();
+    if ($("#projects-box").css('display') !== 'none'){
+      $("#projects-box").fadeOut();
     }
-    i++;
-    $("#about").addClass("marker" + i);
+    if ($("#contact-box").css('display') !== 'none'){
+      $("#contact-box").fadeOut();
+    }
   });
   $("#projects-btn").click(function(){
-    if ( $("#bubble").css('display') == 'none') $("#bubble").fadeIn();
-    if (i > 0) $("marker" + i).fadeOut();
-    i++;
-    $("#projects").fadeIn().addClass("marker"+i);
+    if( $("#bubble").css('display') == 'none') {
+      $("#bubble").fadeIn();
+      $("#start-btn").hide();
+    }
+    if ($("#about-box").css('display') !== 'none'){
+      $("#about-box").fadeOut();
+    }
+    $("#projects-box").fadeIn();
+  });
+  $("#contact-btn").click(function(){
+    if( $("#bubble").css('display') == 'none') {
+      $("#bubble").fadeIn();
+      $("#start-btn").hide();
+    }
+    if ($("#about-box").css('display') !== 'none'){
+      $("#about-box").fadeOut();
+    }
+    if ($("#projects-box").css('display') !== 'none'){
+      $("#prokects-box").fadeOut();
+    }
+    $("#contact-box").fadeIn();
   });
 });
