@@ -1,3 +1,7 @@
+html {
+  font-size: 18px;
+}
+
 body {
   background-image: url("public/street.gif");
   background-size: cover;
@@ -22,16 +26,16 @@ nav {
   left: 12%;
 }
 
+.menu .segment {
+  margin-right: 30px;
+  border: 2px outset white;
+}
+
 .menu button {
   color: white;
   background-color: transparent;
   border: none;
   cursor: pointer;
-}
-
-.menu .segment {
-  box-shadow: 1px;
-  margin-right: 30px;
 }
 
 .menu .click {
